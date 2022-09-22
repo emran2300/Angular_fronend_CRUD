@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="card-box">
+        <form [formGroup]="productForm" (ngSubmit)="saveChangeCategory()">
+            <div class="row" style="text-align: center;display: block;">
+                <h2>Edit Product</h2>
+            </div>
+    
+            <div class="row">
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="form-group">
+                        <label for="txtcode">Id</label>
+                        <input type="text" id="txtcode" class="form-control" formControlName="proId" autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" formControlName="proName" autocomplete="off" />
+                        <span *ngIf="name && name.invalid && name.touched" class="error">Please enter name</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="form-group">
+                        <label>Stock</label>
+                        <input type="text" class="form-control" formControlName="proStock" autocomplete="off" />
+                        <span *ngIf="stock && stock.invalid && stock.touched" class="error">Enter stock</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="text" class="form-control" formControlName="proPrice" autocomplete="off" />
+                        <span *ngIf="price && price.invalid && price.touched" class="error">Enter price</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select class="form-control" formControlName="catName">
+                            <option value="">Select</option>
+                            <option *ngFor="let item of categoryData" value="{{item.catName}}">
+                               {{item.catName}}
+                            </option>
+                        </select>
+                       
+                    </div>
+                </div>
+            </div>
+            <span *ngIf="category && category.invalid && category.touched" class="error">Select category</span>
+            <div class="row">
+                <div class="offset-lg-3 col-lg-2">
+                    <br>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <br>
+                    <span class={{messageclass}}>{{message}}</span>
+                </div>
+            </div>
+    
+        </form>
+    </div>
+    
+</div>

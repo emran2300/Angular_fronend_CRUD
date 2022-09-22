@@ -1,0 +1,43 @@
+<div class="container">
+
+    <div class="card-box">
+        <form [formGroup]="categoryForm" (ngSubmit)="saveChangeCategory()">
+            <div class="row" style="text-align: center;display: block;">
+                <h2>Edit Category</h2>
+            </div>
+    
+            <div class="row">
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="form-group">
+                        <label for="txtcode">Id</label>
+                        <input type="text" id="txtcode" class="form-control" formControlName="catId" autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" formControlName="catName" autocomplete="off" />
+                        <span *ngIf="name && name.invalid && name.touched" class="error">Please enter name</span>
+                    </div>
+                </div>
+            </div>        
+            <div class="row">
+                <div class="offset-lg-3 col-lg-2">
+                    <br>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <br>
+                    <span class={{messageclass}}>{{message}}</span>
+                </div>
+            </div>
+    
+        </form>
+    </div>
+    
+    
+</div>

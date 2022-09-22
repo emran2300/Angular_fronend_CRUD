@@ -1,0 +1,30 @@
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <a routerLink="add" id="addbtn" class="btn btn-success btn-rounded">Add New</a>
+        </div>
+    </div>
+    <br>
+    <table class="table align-middle mb-0 bg-white">
+        <thead class="bg-light">
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of categoryData">
+                <td>{{item.catName}}</td>
+                <td>
+                    <button routerLink="edit/{{item.catId}}" type="button" class="btn btn-link btn-rounded btn-sm fw-bold" data-mdb-ripple-color="dark">
+                        Edit
+                    </button>
+                    <button (click)="delete(item.catId)" type="button" class="btn btn-link btn-rounded btn-sm fw-bold" data-mdb-ripple-color="dark">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
